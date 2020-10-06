@@ -132,6 +132,13 @@ namespace terminalcontrol
 
                 if (e.KeyCode == Keys.OemMinus)
                 {
+                    if (e.Shift)
+                    {
+                        shellStream.Write("_");
+                        localcommand += "_";
+                        return;
+                    }
+
                     shellStream.Write("-");
                     localcommand += "-";
                     return;
